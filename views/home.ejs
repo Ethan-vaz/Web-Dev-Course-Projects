@@ -1,0 +1,79 @@
+<!-- TODO: Update this page to the DaisyUI theme of your choosing -->
+<!-- TODO: You are NOT allowed to choose: light, dark, or cupcake -->
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="min-h-screen m-w-1/2 bg-base-400 p-10">
+
+    <h1 class="text-4xl text-primary font-bold pb-5">Featured Artists</h1>
+
+    <div class="m-5 border-2 border-primary rounded-md">
+        <h2 class="text-3xl font-bold px-5 py-5">About this list</h2>
+        <p class="px-5 py-5 text-md">
+            These featured artists were selected using a simple popularity score that combines recent
+            streaming activity, playlist appearances, and social media mentions over the last 30 days.
+        </p>
+    </div>
+
+    <!-- This is the code that displays the list of artists. -->
+    <!-- It is a daisyUI "List" component -->
+    <!-- Documentation: https://daisyui.com/components/list/ -->
+    <!-- --------------------------------------------------- -->
+    <ul class="list bg-base-100 rounded-box shadow-md">
+        <li class="list-row">
+            <div class="text-4xl font-thin opacity-30 tabular-nums">01</div>
+            <div>
+                <img class="size-10 rounded-box"
+                    src="https://charts-static.billboard.com/img/2002/06/beyonce-n2a-344x344.jpg" />
+            </div>
+            <div class="list-col-grow">
+                <div>Beyonce</div>
+                <div class="text-xs uppercase font-semibold opacity-60">pop</div>
+            </div>
+            <div>
+                <a href="/artists/Beyonce/random" class="btn btn-primary">Show Random Song</a>
+            </div>
+        </li>
+        <li class="list-row">
+            <div class="text-4xl font-thin opacity-30 tabular-nums">02</div>
+            <div>
+                <img class="size-10 rounded-box"
+                    src="https://charts-static.billboard.com/img/2015/09/raye-dj0-344x344.jpg" />
+            </div>
+            <div class="list-col-grow">
+                <div>RAYE</div>
+                <div class="text-xs uppercase font-semibold opacity-60">pop</div>
+            </div>
+            <div>
+                <a href="/artists/RAYE/random" class="btn btn-primary">Show Random Song</a>
+            </div>
+        </li>
+        <li class="list-row">
+            <div class="text-4xl font-thin opacity-30 tabular-nums">03</div>
+            <div>
+                <img class="size-10 rounded-box"
+                    src="https://charts-static.billboard.com/img/2009/04/drake-bg5-344x344.jpg" />
+            </div>
+            <div class="list-col-grow">
+                <div>Drake</div>
+                <div class="text-xs uppercase font-semibold opacity-60">hip hop</div>
+            </div>
+            <div>
+                <a href="/artists/Drake/random" class="btn btn-primary">Show Random Song</a>
+            </div>
+        </li>
+    </ul>
+    <!-- --------------------------------------------------- -->
+    
+    <div class="flex flex-row justify-between items-center">
+        <p>© 2026 Music App Demo</p>
+        <p>For educational use only</p>
+    </div>
+</body>
+
+</html>
