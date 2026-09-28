@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="p-8">
+
+    <h1 class="text-2xl font-bold">Heroes</h1>
+
+    <% for (let hero of x) { %>
+    
+            <p class="py-2">Name: <%= hero.superheroName%></p>
+            <p class="py-2">Power Level: <%= hero.powerLevel%></p>
+            <!-- daisyui avatar -->
+            <div class="avatar">
+                <div class="mask mask-heart w-24">
+                    <img src="<%= hero.imgUrl%>"/>
+                </div>
+            </div>
+            <a href="/superhero/increase/<%= hero.id%>" class="link link-primary">Click to increase power level by 1</a>
+            <div class="divider"></div>
+
+    <% } %>
+
+
+</body>
+</html>
