@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+    <!-- navigation -->
+    <div class="navbar shadow-sm bg-neutral text-neutral-content">
+        <div class="flex-1">
+            <a class="btn btn-ghost text-xl">College Parking</a>
+        </div>
+        <div class="flex-none">
+            <ul class="menu menu-horizontal px-1">
+                <li><a href="/">Admin</a></li>
+                <li><a href="/forms/parking">Pay for Parking</a></li>                
+            </ul>
+        </div>
+    </div>
+    <div class="container mx-auto">
+        <h1 class="text-2xl font-bold my-4">Pay for Parking</h1>
+
+
+        <!-- start of example ui for a form -->
+        <!-- ------------------------------ -->
+        <form method="POST" action="/pay"  class="flex flex-col gap-2 p-4 w-[300px] border-1">
+
+            <label>Enter license plate:</label>
+            <input type="text" name="license" required/>
+            <label>Enter Car Model:</label>
+            <input type="text" name="model" />
+            <label>Enter Hours:</label>
+            <input type="number" name="hours" required/>
+        
+            <button class="btn btn-primary">Pay</button>
+        </form>
+        <!-- ----------------------------- -->
+        <!-- end of example UI for a form -->
+        
+    </div>
+
+</body>
+
+</html>
