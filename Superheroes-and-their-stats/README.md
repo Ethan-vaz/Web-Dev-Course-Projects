@@ -32,7 +32,14 @@ npm install
 npm start
 ```
 
-Then open <http://localhost:8080>.
+Then open <http://localhost:8080>. The server uses the `PORT` environment variable if it is set.
+
+## Deploying (Render)
+
+1. Create a new **Web Service** on [Render](https://render.com) and connect this GitHub repository.
+2. Set **Root Directory** to `Superheroes-and-their-stats`.
+3. Build command: `npm install` · Start command: `npm start`.
+4. Choose the **Free** instance type and deploy.
 
 ## Routes
 

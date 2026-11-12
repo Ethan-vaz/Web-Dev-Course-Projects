@@ -1,6 +1,7 @@
 const express = require("express")
 const app = express()
-const port = 8080;
+// Hosting providers (Render, Railway, etc.) set PORT; fall back to 8080 locally
+const port = process.env.PORT || 8080;
 
 app.set("view engine", "ejs")
 
@@ -61,7 +62,7 @@ app.post("/superhero/increase/:idOfHero", (req, res) => {
 })
 
 const startServer = () => {
-   console.log(`The server is running on http://localhost:${port}`)
+   console.log(`The server is running on port ${port}`)
    console.log(`Press CTRL + C to exit`)
 }
 app.listen(port, startServer)

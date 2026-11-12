@@ -1,7 +1,7 @@
 {
-  "name": "contactbook-express",
+  "name": "superheroes-and-their-stats",
   "version": "1.0.0",
-  "description": "",
+  "description": "Server-rendered Express + EJS app showing superheroes and their stats",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,5 +14,8 @@
   "dependencies": {
     "ejs": "^4.0.1",
     "express": "^5.2.1"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }
