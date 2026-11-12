@@ -1,6 +1,7 @@
 const express = require("express")
 const app = express()
-const port = 8080;
+// Hosting providers (Render, Railway, etc.) set PORT; fall back to 8080 locally
+const port = process.env.PORT || 8080;
 
 app.set("view engine", "ejs")
 
@@ -8,8 +9,6 @@ const {superheroes} = require("./data/db")
 
 // http://localhost:8080
 app.get("/", (req,res)=>{    
-
-    console.log(superheroes)
 
 
 
@@ -46,34 +45,24 @@ app.get("/", (req,res)=>{
 
 })
 
-// endpoint that  updates the power lvel of a selected hero
+// Increase the power level of the selected hero by 1.
+// Called from the form on the home page:
+// POST http://localhost:8080/superhero/increase/13
+app.post("/superhero/increase/:idOfHero", (req, res) => {
+    const hero = superheroes.find((item) => item.id === Number(req.params.idOfHero))
 
-// http://localhost:8080/superhero/increase/13
-// http://localhost:8080/superhero/increase/11
+    if (!hero) {
+        return res.status(404).send("Superhero not found")
+    }
 
-app.get("/superhero/increase/:idOfHero", (req,res)=>{
+    hero.powerLevel += 1
 
-    // use the id to find the superhero in the database
-    const arrayPos = superheroes.findIndex((item)=>{
-        if (item.id === Number(req.params.idOfHero)) {
-            return true
-        } else {
-            return false
-        }
-    })
-
-    // using the id, get the corresponding object
-    superheroes[arrayPos].powerLevel += 1
-
-    console.log(superheroes[arrayPos])
-
-
-    return res.send("powerlevel incrased")
-    
+    // Send the user back to the home page so they see the updated value
+    return res.redirect("/")
 })
 
 const startServer = () => {
-   console.log(`The server is running on http://localhost:${port}`)
+   console.log(`The server is running on port ${port}`)
    console.log(`Press CTRL + C to exit`)
 }
 app.listen(port, startServer)

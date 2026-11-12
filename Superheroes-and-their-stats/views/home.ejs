@@ -22,7 +22,9 @@
                     <img src="<%= hero.imgUrl%>"/>
                 </div>
             </div>
-            <a href="/superhero/increase/<%= hero.id%>" class="link link-primary">Click to increase power level by 1</a>
+            <form action="/superhero/increase/<%= hero.id%>" method="POST">
+                <button type="submit" class="btn btn-primary btn-sm">Increase power level by 1</button>
+            </form>
             <div class="divider"></div>
 
     <% } %>
